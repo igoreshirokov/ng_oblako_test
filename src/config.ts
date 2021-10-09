@@ -1,5 +1,5 @@
 const config = {
-    "API_URL": "http://localhost:3000",
+    "API_URL": "https://oblakotesting.herokuapp.com",
     "PROJECTS": "/projects",
     "TODOS": "/todos"
 }
