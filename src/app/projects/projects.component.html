@@ -1,0 +1,14 @@
+<mat-progress-spinner class="loading" *ngIf="!projects" mode="indeterminate"></mat-progress-spinner>
+
+<div *ngIf="projects" class="projects">
+    <div class="project-list" *ngFor="let project of projects">
+        <mat-selection-list color="primary">
+            <h2>{{project.title}}</h2>
+            <div class="todo" *ngFor="let todo of project.todos">
+                <mat-list-option (click)="todoClick(todo.id, project.id)" [selected]="todo.isCompleted" color="primary">
+                    {{todo.text}}
+                </mat-list-option>
+            </div>
+        </mat-selection-list>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="form-todo">
+    <h2>Новая задача</h2>
+    <mat-form-field class="example-form-field" appearance="fill">
+        <mat-label>Задача</mat-label>
+        <input matInput type="text" [formControl]="taskName">
+        <button *ngIf="taskName.value" matSuffix mat-icon-button aria-label="Clear" (click)="clearInputTaskName()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Проекты</mat-label>
+        <mat-select [formControl]="projectName">
+            <mat-option *ngFor="let project of projectsList" [value]="project.id">{{project.title}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button mat-button (click)="sendForm()" mat-dialog-close> Добавить задачу</button>
+</div>
